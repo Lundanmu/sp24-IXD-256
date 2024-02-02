@@ -6,19 +6,21 @@ import time
 
 pin41 = None
 pin1 = None
+button_value = None
 
 def setup():
   global pin41, pin1
   M5.begin()
-  # initialize pin 41 (screen button on AtomS3 board) as input: 
+  # initialize pin 41 (screen button on AtomS3 board) as input:
   pin41 = Pin(41, mode=Pin.IN)
   # initialize pin 1 (bottom connector white wire) as output:
   pin1 = Pin(1, mode=Pin.OUT)
 
 def loop():
-  global pin41, pin1
+  global pin41, pin1, button_value
   M5.update()
-  if pin41.value():
+  button_value = pin41.value()
+  if button_value == 0:
     pin1.on()
   else:
     pin1.off()
