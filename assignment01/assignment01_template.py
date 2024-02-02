@@ -4,35 +4,42 @@ from M5 import *
 from hardware import *
 import time
 
-label0 = None
+pin_label = None
+program_state_label = None
+
 input_pin = None
 input_value = 0
 input_timer = 0
 program_state = 'START'
 
 def setup():
-  global label0, input_pin
+  global pin_label, program_state_label, input_pin
 
   M5.begin()
-  label0 = Widgets.Label("input", 5, 5, 1.0, 0xffffff, 0x222222, Widgets.FONTS.DejaVu18)
+  pin_label = Widgets.Label("input", 5, 5, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
+  program_state_label = Widgets.Label("START", 5, 25, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
   # initialize input on pin 41 (built-in button):
-  input_pin = Pin(41, mode=Pin.IN)
-  # initialize input on pin 8 with pull up:
-  #input_pin = Pin(8, mode=Pin.IN, pull=Pin.PULL_UP)
+  #input_pin = Pin(41, mode=Pin.IN)
+  # initialize input on pin 1 with pull up:
+  input_pin = Pin(1, mode=Pin.IN, pull=Pin.PULL_UP)
 
 def loop():
-  global label0, pin1
+  global pin_label, program_state_label
   global input_value
   global input_timer
+  global program_state
   M5.update()
   # check input every 500 ms (half second):
   if time.ticks_ms() > input_timer + 500:
     input_timer = time.ticks_ms()  # update button_timer
     input_value = input_pin.value()
     if input_value == 0:
-      label0.setText('pin ON')
+      pin_label.setText('pin ON')
+      if program_state == 'START':
+        program_state = 'RUN'
+        program_state_label.setText(program_state)
     else:
-      label0.setText('pin OFF')
+      pin_label.setText('pin OFF')
   
 if __name__ == '__main__':
   try:
