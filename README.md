@@ -8,4 +8,5 @@ Code examples for Adv. Interactive Prototyping class.
 ### Class 03  
   
 [Digital Input/Output](class03/digital_input_output.py) - turn pin 1 output on/off with AtomS3 screen button input  
+[Digital Input/Output Toggle](class03/digital_input_output_toggle.py) - using `program_state` variable to toggle output with button input  
 
