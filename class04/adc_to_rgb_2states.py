@@ -71,7 +71,17 @@ def loop():
     time.sleep_ms(50)
     
   elif program_state == 'RGB_FILL':
-    rgb.fill_color(0x0000FF)  # fill with blue
+    #rgb.fill_color(0x0000FF)  # fill with blue
+    # convert ADC value to range of 30 pixels (0 - 29):
+    adc1_val_30pix = map_value(adc1_val, 0, 4095, 0, 30)
+    #rgb.fill_color(0x000000)  # fill all pixels black
+    # fill pixels up to adc1_val_30pix with blue:
+    for i in range(30):
+      if i < adc1_val_30pix:
+        rgb.set_color(i, 0x0000FF)
+      else:
+        rgb.set_color(i, 0x000000)
+    print(adc1_val_30pix)
     time.sleep_ms(50)
   
   if time.ticks_ms() > button_timer + 500:
