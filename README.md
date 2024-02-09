@@ -9,5 +9,9 @@ Code examples for Adv. Interactive Prototyping class.
   
 [Digital Input/Output](class03/digital_input_output.py) - turn pin 1 output on/off with AtomS3 screen button input  
 [Digital Input/Output Toggle](class03/digital_input_output_toggle.py) - using program state and timer variables to toggle output with button input  
-[RGB Output](class03/rgb_output.py) - controlling color RGB LED strips with `fill_color` and `set_color` functions    
+[RGB Output](class03/rgb_output.py) - controlling color RGB LED strips with `fill_color` and `set_color` functions  
+
+### Class 04  
+  
+[ADC Test](class04/adc_test.py) - reading Analog to Digital Converter (ADC) input  
 
