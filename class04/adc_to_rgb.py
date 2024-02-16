@@ -1,4 +1,4 @@
-# ADC test example for M5Stack AtomS3
+# Mapping analog input to RGB output example
 
 import os, sys, io
 import M5
