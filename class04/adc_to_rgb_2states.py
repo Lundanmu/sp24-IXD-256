@@ -1,4 +1,5 @@
-# ADC test example for M5Stack AtomS3
+# Switching between 2 ways of mapping analog input to RGB LED output,
+# using the screen button on AtomS3 to change program states
 
 import os, sys, io
 import M5
