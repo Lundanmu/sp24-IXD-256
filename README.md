@@ -14,4 +14,6 @@ Code examples for Adv. Interactive Prototyping class.
 ### Class 04  
   
 [ADC Test](class04/adc_test.py) - reading Analog to Digital Converter (ADC) input  
+[ADC to RGB](class04/adc_to_rgb.py) - mapping analog input to RGB LED output with the custom `map_value` function
+[ADC to RGB Fill and Fade](class04/adc_to_rgb_2states.py) - using analog and button inputs to change between 2 RGB LED behaviors  
 
