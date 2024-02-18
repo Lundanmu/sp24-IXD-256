@@ -1,4 +1,4 @@
-### WebSerial Test  
+### WebSerial PyScript Test  
   
 The files in this directory show a simple example of reading input from hardware with a software program written in Python syntax, by combining [PyScript](https://pyscript.net/) with the [p5 Graphics Library](https://p5js.org/) using [Web Serial API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API).  
 
