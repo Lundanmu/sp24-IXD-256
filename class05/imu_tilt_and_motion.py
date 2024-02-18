@@ -1,3 +1,5 @@
+# IMU tilt and motion detection in X and Y axes
+
 import os, sys, io
 import M5
 from M5 import *
@@ -47,6 +49,7 @@ def loop():
   print(imu_val)
   # print the first IMU value (X) only:
   #print('acc x:', imu_x_val)
+  # print the second IMU value (Y) only:
   #print('acc y:', imu_y_val)
   
   # display RIGHT or LEFT according to X-axis tilt:
@@ -66,15 +69,14 @@ def loop():
     label1.setText('')
     
   # display X MOTION according to change in X-axis:
-  # absolute value of the difference between new and last X values:
-  imu_x_diff = math.fabs(imu_x_val - imu_x_last)  
-  #if (imu_x_val - imu_x_last > 0.5) or (imu_x_val - imu_x_last < -0.5):
-  if imu_x_diff > 0.5:
+  if (imu_x_val - imu_x_last > 0.5) or (imu_x_val - imu_x_last < -0.5):
     label2.setText('X MOTION')
   else:
     label2.setText('')
-    
+
+  # absolute value of the difference between new and last Y values:
   imu_y_diff = math.fabs(imu_y_val - imu_y_last)  
+  # display Y MOTION according to change in Y-axis:
   if imu_y_diff > 0.5:
     label3.setText('Y MOTION')
   else:
