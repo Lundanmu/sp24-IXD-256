@@ -32,15 +32,6 @@ def map_value(in_val, in_min, in_max, out_min, out_max):
     out_val = out_max
   return int(out_val)
 
-# function to map input value range to output value range:
-def map_value(in_val, in_min, in_max, out_min, out_max):
-  out_val = out_min + (in_val - in_min) * (out_max - out_min) / (in_max - in_min)
-  if out_val < out_min:
-    out_val = out_min
-  elif out_val > out_max:
-    out_val = out_max
-  return int(out_val)
-
 def loop():
   global label0, adc1, adc1_value
   M5.update()
