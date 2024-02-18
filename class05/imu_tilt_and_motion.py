@@ -22,11 +22,12 @@ def setup():
   global title0, label0, label1, label2, label3
 
   M5.begin()
-  title0 = Widgets.Title("IMU test", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
-  label0 = Widgets.Label("--", 3, 20, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
-  label1 = Widgets.Label("--", 3, 40, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
-  label2 = Widgets.Label("--", 3, 60, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
+  title0 = Widgets.Title("IMU motion", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
+  label0 = Widgets.Label("tilt or move", 3, 20, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
+  label1 = Widgets.Label("up, down", 3, 40, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
+  label2 = Widgets.Label("left, right", 3, 60, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
   label3 = Widgets.Label("--", 3, 80, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
+  time.sleep(5)  # delay 5 seconds
 
 def loop():
   global title0, label0, label1, label2
@@ -58,7 +59,7 @@ def loop():
   elif imu_x_val > 0.7:
     label0.setText('LEFT')
   else:
-    label0.setText('')
+    label0.setText('no X tilt')
 
   # display UP or DOWN according to Y-axis tilt:
   if imu_y_val < -0.5:
@@ -66,13 +67,13 @@ def loop():
   elif imu_y_val > 0.5:
     label1.setText('UP')
   else:
-    label1.setText('')
+    label1.setText('no Y tilt')
     
   # display X MOTION according to change in X-axis:
   if (imu_x_val - imu_x_last > 0.5) or (imu_x_val - imu_x_last < -0.5):
     label2.setText('X MOTION')
   else:
-    label2.setText('')
+    label2.setText('no X motion')
 
   # absolute value of the difference between new and last Y values:
   imu_y_diff = math.fabs(imu_y_val - imu_y_last)  
@@ -80,7 +81,7 @@ def loop():
   if imu_y_diff > 0.5:
     label3.setText('Y MOTION')
   else:
-    label3.setText('')
+    label3.setText('no Y motion')
     
   # format each IMU value with 2 points precision:
   #imu_str = 'acc x: {:0.2f}'.format(imu_val[0])
