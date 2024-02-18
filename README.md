@@ -20,6 +20,6 @@ Code examples for Adv. Interactive Prototyping class.
 ### Class 05  
 
 [IMU Test](class05/imu_test.py) - reading Inertial Measurement Unit (IMU) input    
-[WebSerial Test](class05/webserial_pyscript_test/)  
+[WebSerial Test](class05/webserial_pyscript_test/) - reading input with a graphical software program  
 [WebSerial Test GitHub Pages Link](https://pa-nik.github.io/SP24-IXD-256/class05/webserial_pyscript_test/)  
 [WebSerial P5 GitHub Pages Link](https://pa-nik.github.io/SP24-IXD-256/class05/webserial_pyscript_p5/)  
