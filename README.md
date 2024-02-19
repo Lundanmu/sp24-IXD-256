@@ -24,3 +24,5 @@ Code examples for Adv. Interactive Prototyping class.
 [WebSerial Pyscript Test](class05/webserial_pyscript_test/) - reading Serial input with a graphical software program  
 [Print ADC](class05/print_adc.py) - firmware program to test communication with WebSerial PyScript Test example  
 [WebSerial PyScript Template](class05/webserial_pyscript_template/) - using Serial input to change  shapes, images, fonts + play sounds  
+[Print ADC and Button](class05/print_adc_and_button.py) - firmware program to test communication with WebSerial PyScript Template  
+[Print IMU and Button](class05/print_imu_and_button.py) - another program to test communication with WebSerial PyScript Template  
