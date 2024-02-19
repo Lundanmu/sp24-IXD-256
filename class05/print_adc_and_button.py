@@ -1,4 +1,5 @@
-# test example for WebSerial Communication
+# read and print ADC, button values
+# this example can be used with WebSerial Pyscript Template
 
 import os, sys, io
 import M5
@@ -16,7 +17,7 @@ def setup():
   global label0, adc1, pin41
   M5.begin()
   # initialize dispaly title and label:
-  title0 = Widgets.Title("ADC+button", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
+  title0 = Widgets.Title("ADC, button", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
   label0 = Widgets.Label("--", 3, 20, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
   # initialize analog to digital converter on pin 1:
   adc1 = ADC(Pin(1), atten=ADC.ATTN_11DB)
@@ -43,11 +44,13 @@ def loop():
   # map the ADC value from 0-4095 to 0-255 range:
   adc1_val_8bit = map_value(adc1_val, 0, 4095, 0, 255)
   
-  # print the ADC value:
-  print(str(adc1_val_8bit) + ',' + str(button_value))
+  # print the 8-bit ADC value ending with comma:
+  print(adc1_val_8bit, end=',')
+  # print the button value:
+  print(button_value)
   
-  # show ADC value on display label:
-  label0.setText(str(adc1_val_8bit))
+  # show ADC, button values on display label:
+  label0.setText(str(adc1_val_8bit) + ', ' + str(button_value))
   time.sleep_ms(500)
 
 if __name__ == '__main__':
