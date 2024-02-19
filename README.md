@@ -21,6 +21,6 @@ Code examples for Adv. Interactive Prototyping class.
 
 [IMU Test](class05/imu_test.py) - reading Inertial Measurement Unit (IMU) input  
 [IMU Tilt and Motion](class05/imu_tilt_and_motion.py) - detecting tilt and motion with IMU acceleration values   
-[WebSerial Pyscript Test](class05/webserial_pyscript_test/) - reading input with a graphical software program  
+[WebSerial Pyscript Test](class05/webserial_pyscript_test/) - reading Serial input with a graphical software program  
 [Print ADC](class05/print_adc.py) - firmware program to test communication with WebSerial PyScript Test example  
-[WebSerial P5 GitHub Pages Link](https://pa-nik.github.io/SP24-IXD-256/class05/webserial_pyscript_p5/)  
+[WebSerial PyScript Template](class05/webserial_pyscript_template/) - using Serial input to change  shapes, images, fonts + play sounds  
