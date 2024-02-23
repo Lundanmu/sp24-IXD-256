@@ -9,18 +9,24 @@ import time
 title0 = None
 label0 = None
 rgb = None
+
 r = 0
 r_final = 0
+g = 0
+g_final = 0
+b = 0
+b_final = 0
 
 def setup():
   global title0, label0, rgb
   M5.begin()
   # display title ("title text", text offset, fg color, bg color, font):
-  title0 = Widgets.Title("TITLE", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
+  title0 = Widgets.Title("input r,g,b", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
   # display label ("label text", x, y, layer number, fg color, bg color, font):
-  label0 = Widgets.Label("label", 3, 20, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
+  label0 = Widgets.Label("--", 3, 20, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
   # initialize RGB LED strip on pin 38 with 30 pixels:
   rgb = RGB(io=38, n=30, type="SK6812")
+  rgb.fill_color(0x000000)  # turn off rgb 
 
 def get_color(r, g, b):
   rgb_color = (r << 16) | (g << 8) | b
@@ -28,18 +34,35 @@ def get_color(r, g, b):
 
 def loop():
   global rgb
-  global r, r_final
+  global r, g, b
+  global r_final, g_final, b_final
   M5.update()
-  if r == r_final:
-    input_str = input('input red value: ')
+  if r == r_final and g == g_final and b == b_final:
+    input_str = input('input r,g,b values: ')
     print('received:', input_str)
-    r_final = int(input_str)
+    input_list = input_str.split(',')
+    print(input_list)
+    if len(input_list) == 3:
+      label0.setText(input_list[0] + ',' + input_list[1] + ',' + input_list[2])
+      r_final = int(input_list[0])
+      g_final = int(input_list[1])
+      b_final = int(input_list[2])
+    else:
+      print('incorrect input!')
   else:
     if r < r_final:
       r += 1
     elif r > r_final:
       r -= 1
-    c = get_color(r, 0, 0)
+    if g < g_final:
+      g += 1
+    elif g > g_final:
+      g -= 1
+    if b < b_final:
+      b += 1
+    elif b > b_final:
+      b -= 1
+    c = get_color(r, g, b)
     rgb.fill_color(c)
   
   time.sleep_ms(5)
