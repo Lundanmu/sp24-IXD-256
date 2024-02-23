@@ -26,3 +26,7 @@ Code examples for Adv. Interactive Prototyping class.
 [WebSerial PyScript Template](class05/webserial_pyscript_template/) - using Serial input to change  shapes, images, fonts + play sounds  
 [Print ADC and Button](class05/print_adc_and_button.py) - firmware program to test communication with WebSerial PyScript Template  
 [Print IMU and Button](class05/print_imu_and_button.py) - another program to test communication with WebSerial PyScript Template  
+
+### Class 06  
+
+[Input to RGB](class06/input_rgb.py) - receiving r,g,b values with `input` function  
