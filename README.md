@@ -30,3 +30,8 @@ Code examples for Adv. Interactive Prototyping class.
 ### Class 06  
 
 [Input to RGB](class06/input_rgb.py) - receiving r,g,b values with `input` function  
+
+### Extras  
+
+[AtomS3 Begin](extras/atomS3_begin.py) - beginner template for AtomS3 firwmare  
+[RGB Rainbow](extras/rgb_rainbow.py) - rainbow animation or RGB LEDs with the custom `hsb_to_color` function  
