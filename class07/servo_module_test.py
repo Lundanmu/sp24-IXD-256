@@ -1,4 +1,5 @@
-# beginner program for M5Stack AtomS3 based on uiflow2 code structure
+# test program to move a servo
+# NOTE: servo.py file should be saved to hardware first
 
 import os, sys, io
 import M5
@@ -15,9 +16,9 @@ def setup():
   global title0, label0, servo
   M5.begin()
   # display title ("title text", text offset, fg color, bg color, font):
-  title0 = Widgets.Title("TITLE", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
+  title0 = Widgets.Title("servo test", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
   # display label ("label text", x, y, layer number, fg color, bg color, font):
-  label0 = Widgets.Label("label", 3, 20, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
+  label0 = Widgets.Label("--", 3, 20, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu18)
   # configure servo on pin 38:
   servo = Servo(pin=38)
   servo.move(90)
