@@ -29,7 +29,8 @@ Code examples for Adv. Interactive Prototyping class.
 
 ### Class 06  
 
-[Input to RGB](class06/input_rgb.py) - receiving r,g,b values with `input` function  
+[Input Example](class06/input_example.py) - simple example of using the `input` function  
+[Input to RGB](class06/input_rgb.py) - receiving r,g,b values with `input` to fade RGB LEDs  
 
 ### Extras  
 
