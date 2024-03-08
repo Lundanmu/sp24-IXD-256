@@ -16,8 +16,8 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(('', 80))
 s.listen(5)
 
-ssid = 'ACCD'
-password = 'tink1930'
+ssid = 'INSERT_WIFI_NAME'
+password = 'INSERT_WIFI_PASSWORD'
 
 wifi = network.WLAN(network.STA_IF)
 wifi.active(True)
