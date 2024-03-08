@@ -1,4 +1,7 @@
-# beginner program for M5Stack AtomS3 based on uiflow2 code structure
+# ESP32 web server example, adapted for M5Stack AtomS3 from
+# https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
+# change ssid and password values below for your WiFi connection
+# after running the program, visit the address
 
 import os, sys, io
 import M5
@@ -9,15 +12,15 @@ import time
 import network
 import usocket as socket
 
+ssid = 'INSERT_WIFI_NAME'
+password = 'INSERT_WIFI_PASSWORD'
+
 title0 = None
 label0 = None
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(('', 80))
 s.listen(5)
-
-ssid = 'INSERT_WIFI_NAME'
-password = 'INSERT_WIFI_PASSWORD'
 
 wifi = network.WLAN(network.STA_IF)
 wifi.active(True)
@@ -29,7 +32,10 @@ while wifi.isconnected() == False:
   time.sleep_ms(100)
 
 print('WiFi connection successful')
-print(wifi.ifconfig())
+#print(wifi.ifconfig())
+ip_list = wifi.ifconfig()
+ip_address = ip_list[0]
+print('IP address:', ip_address)
 
 program_state = 'ON'
 
@@ -65,8 +71,6 @@ def setup():
   title0 = Widgets.Title("Web Server", 3, 0x000000, 0xffffff, Widgets.FONTS.DejaVu18)
   # display label ("label text", x, y, layer number, fg color, bg color, font):
   label0 = Widgets.Label("---", 3, 20, 1.0, 0xffffff, 0x000000, Widgets.FONTS.DejaVu12)
-  ip_list = wifi.ifconfig()
-  ip_address = ip_list[0]
   label0.setText(ip_address)
   
   
@@ -86,16 +90,10 @@ def loop():
         program_state = 'ON'
         print(program_state)
         label0.setText(program_state)
-        #led.value(1)
-        #rgb.fill_color(0x0000ff)
     if state_off == 6:
         program_state = 'OFF'
         print(program_state)
         label0.setText(program_state)
-        #rgb_state = 'OFF'
-        #led.value(0)
-        #rgb.fill_color(0x000000)
-    #print('rgb_state =', rgb_state)
     response = web_page()
     conn.send('HTTP/1.1 200 OK\n')
     conn.send('Content-Type: text/html\n')
