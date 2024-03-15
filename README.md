@@ -32,6 +32,12 @@ Code examples for Adv. Interactive Prototyping class.
 [Input Example](class06/input_example.py) - simple example of using the `input` function  
 [Input to RGB](class06/input_rgb.py) - receiving r,g,b values with `input` to fade RGB LEDs  
 
+### Class 07  
+
+[Servo Module](class07/servo.py) - servo module with `Servo` object class, `move` method, etc.  
+[Servo Module Test](class07/servo_module_test.py) - test servo motion with the servo module  
+[ADC to Servo](class07/adc_to_servo.py) - control servo motion with analog input  
+
 ### Extras  
 
 [AtomS3 Begin](extras/atomS3_begin.py) - beginner template for AtomS3 firwmare  
