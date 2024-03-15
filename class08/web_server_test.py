@@ -1,7 +1,7 @@
 # ESP32 web server example, adapted for M5Stack AtomS3 from
 # https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
 # change ssid and password values below for your WiFi connection
-# after running the program, visit the address
+# after running the program, visit the URL printed on the terminal
 
 import os, sys, io
 import M5
