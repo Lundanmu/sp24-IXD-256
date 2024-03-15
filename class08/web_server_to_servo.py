@@ -13,8 +13,8 @@ import usocket as socket
 
 from servo import Servo
 
-ssid = 'INSERT_WIFI_NAME'
-password = 'INSERT_WIFI_PASSWORD'
+ssid = 'ACCD'
+password = 'tink1930'
 
 title0 = None
 label0 = None
