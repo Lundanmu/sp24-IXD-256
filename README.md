@@ -38,6 +38,11 @@ Code examples for Adv. Interactive Prototyping class.
 [Servo Module Test](class07/servo_module_test.py) - test servo motion with the servo module  
 [ADC to Servo](class07/adc_to_servo.py) - control servo motion with analog input  
 
+### Class 08  
+
+[Web Server Test](class08/web_server_test.py) - test program for configuring AtomS3 as a web server  
+[Web Server to Servo](class08/web_server_to_servo.py) - controlling a servo from a web page  
+
 ### Extras  
 
 [AtomS3 Begin](extras/atomS3_begin.py) - beginner template for AtomS3 firwmare  
