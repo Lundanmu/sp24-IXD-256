@@ -29,7 +29,7 @@ def setup():
 
 
 def loop():
-  global i2c0, servos8_0
+  global i2c0, heart_sensor
   M5.update()
   heart_sensor.read_sensor()
   print(heart_sensor.ir, heart_sensor.red)
